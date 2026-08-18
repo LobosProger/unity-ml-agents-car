@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 292" width="940" height="292" role="img" aria-label="Agent loop: observations feed the policy, the policy outputs steering and throttle, the car controller drives the physics, and the reward closes the loop">
+  <title>CarAgent decision loop</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="rgba(127,135,142,0.75)"/>
+    </marker>
+  </defs>
+
+  <text x="8" y="20" fill="#8b949e" font-size="13.5" font-weight="600" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif">One decision every 5 physics steps &#183; episode ends on target, wall or flip-over</text>
+
+  <g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif">
+    <rect x="8" y="40" width="164" height="126" rx="10" fill="#58a6ff" fill-opacity="0.10" stroke="#58a6ff" stroke-opacity="0.55" stroke-width="1.4"/>
+    <text x="90" y="68" fill="#58a6ff" font-size="14.5" font-weight="700" text-anchor="middle">Observations</text>
+    <g font-size="11.5" fill="#7d858c" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">
+      <text x="90" y="92">7 vector floats</text>
+      <text x="90" y="110">+ 13 ray casts</text>
+      <text x="90" y="128">70&#176; fan &#183; 20 m</text>
+      <text x="90" y="150" fill="#58a6ff" font-weight="700">59 inputs</text>
+    </g>
+
+    <rect x="198" y="40" width="164" height="126" rx="10" fill="#bc8cff" fill-opacity="0.10" stroke="#bc8cff" stroke-opacity="0.55" stroke-width="1.4"/>
+    <text x="280" y="68" fill="#bc8cff" font-size="14.5" font-weight="700" text-anchor="middle">Policy</text>
+    <g font-size="11.5" fill="#7d858c" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">
+      <text x="280" y="92">PPO, MLP 2&#215;256</text>
+      <text x="280" y="110">normalised inputs</text>
+      <text x="280" y="128">CarToGoal.onnx</text>
+      <text x="280" y="150" fill="#bc8cff" font-weight="700">Inference Engine</text>
+    </g>
+
+    <rect x="388" y="40" width="164" height="126" rx="10" fill="#f0883e" fill-opacity="0.10" stroke="#f0883e" stroke-opacity="0.55" stroke-width="1.4"/>
+    <text x="470" y="68" fill="#f0883e" font-size="14.5" font-weight="700" text-anchor="middle">Actions</text>
+    <g font-size="11.5" fill="#7d858c" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">
+      <text x="470" y="92">steer &#8712; [-1, 1]</text>
+      <text x="470" y="110">throttle &#8712; [-1, 1]</text>
+      <text x="470" y="128">continuous</text>
+      <text x="470" y="150" fill="#f0883e" font-weight="700">2 outputs</text>
+    </g>
+
+    <rect x="578" y="40" width="164" height="126" rx="10" fill="#a5b3c0" fill-opacity="0.10" stroke="#a5b3c0" stroke-opacity="0.55" stroke-width="1.4"/>
+    <text x="660" y="68" fill="#95a3b0" font-size="14.5" font-weight="700" text-anchor="middle">CarController</text>
+    <g font-size="11.5" fill="#7d858c" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">
+      <text x="660" y="92">4 WheelColliders</text>
+      <text x="660" y="110">motor &#183; brake &#183; steer</text>
+      <text x="660" y="128">lowered mass centre</text>
+      <text x="660" y="150" fill="#95a3b0" font-weight="700">Rigidbody physics</text>
+    </g>
+
+    <rect x="768" y="40" width="164" height="126" rx="10" fill="#3fb950" fill-opacity="0.10" stroke="#3fb950" stroke-opacity="0.55" stroke-width="1.4"/>
+    <text x="850" y="68" fill="#3fb950" font-size="14.5" font-weight="700" text-anchor="middle">Reward</text>
+    <g font-size="11.5" fill="#7d858c" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">
+      <text x="850" y="92">+1 target &#183; &#8722;1 wall</text>
+      <text x="850" y="110">&#8722;0.5 flip-over</text>
+      <text x="850" y="128">+0.02 &#215; &#916;distance</text>
+      <text x="850" y="150" fill="#3fb950" font-weight="700">&#8722;0.001 per step</text>
+    </g>
+  </g>
+
+  <g stroke="rgba(127,135,142,0.75)" stroke-width="1.6" marker-end="url(#arrow)" fill="none">
+    <line x1="174" y1="103" x2="194" y2="103"/>
+    <line x1="364" y1="103" x2="384" y2="103"/>
+    <line x1="554" y1="103" x2="574" y2="103"/>
+    <line x1="744" y1="103" x2="764" y2="103"/>
+  </g>
+
+  <g fill="none" stroke="rgba(127,135,142,0.55)" stroke-width="1.6" stroke-dasharray="5 5">
+    <path d="M850 166 L850 214 L90 214 L90 170" marker-end="url(#arrow)"/>
+  </g>
+  <text x="470" y="238" fill="#7d858c" font-size="12" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif">new physics state &#8594; next observation &#183; on episode end the car resets and the target is re-randomised</text>
+  <text x="470" y="268" fill="#7d858c" font-size="12" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif">24 identical environments run in parallel during training, at 20&#215; time scale</text>
+</svg>

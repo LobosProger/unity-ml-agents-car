@@ -1,0 +1,65 @@
+{
+    "CarToGoal": {
+        "checkpoints": [
+            {
+                "steps": 3499996,
+                "file_path": "results\\car_v1\\CarToGoal\\CarToGoal-3499996.onnx",
+                "reward": 1.1209199851918443,
+                "creation_time": 1779648167.0717585,
+                "auxillary_file_paths": [
+                    "results\\car_v1\\CarToGoal\\CarToGoal-3499996.pt"
+                ]
+            },
+            {
+                "steps": 3999984,
+                "file_path": "results\\car_v1\\CarToGoal\\CarToGoal-3999984.onnx",
+                "reward": 1.1079965193163266,
+                "creation_time": 1779648501.449154,
+                "auxillary_file_paths": [
+                    "results\\car_v1\\CarToGoal\\CarToGoal-3999984.pt"
+                ]
+            },
+            {
+                "steps": 4499988,
+                "file_path": "results\\car_v1\\CarToGoal\\CarToGoal-4499988.onnx",
+                "reward": 1.125844337619268,
+                "creation_time": 1779648812.8469033,
+                "auxillary_file_paths": [
+                    "results\\car_v1\\CarToGoal\\CarToGoal-4499988.pt"
+                ]
+            },
+            {
+                "steps": 4999993,
+                "file_path": "results\\car_v1\\CarToGoal\\CarToGoal-4999993.onnx",
+                "reward": 1.1188803422809843,
+                "creation_time": 1779649123.56704,
+                "auxillary_file_paths": [
+                    "results\\car_v1\\CarToGoal\\CarToGoal-4999993.pt"
+                ]
+            },
+            {
+                "steps": 5049008,
+                "file_path": "results\\car_v1\\CarToGoal\\CarToGoal-5049008.onnx",
+                "reward": 1.3167051076889038,
+                "creation_time": 1779649160.4027507,
+                "auxillary_file_paths": [
+                    "results\\car_v1\\CarToGoal\\CarToGoal-5049008.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 5049008,
+            "file_path": "results\\car_v1\\CarToGoal.onnx",
+            "reward": 1.3167051076889038,
+            "creation_time": 1779649160.4027507,
+            "auxillary_file_paths": [
+                "results\\car_v1\\CarToGoal\\CarToGoal-5049008.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0",
+        "torch_version": "2.2.2+cu121"
+    }
+}

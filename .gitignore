@@ -1,0 +1,76 @@
+# ---------------------------------------------
+# Unity generated
+# ---------------------------------------------
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+/ProfilerCaptures/
+
+# Timer dumps ML-Agents regenerates on every training run
+/Assets/ML-Agents/
+/Assets/ML-Agents.meta
+
+# Asset meta data should only be ignored when the corresponding asset is also ignored
+!/[Aa]ssets/**/*.meta
+
+# ---------------------------------------------
+# IDE / editor
+# ---------------------------------------------
+.vs/
+.idea/
+.vscode/
+.gradle/
+ExportedObj/
+*.csproj
+*.unityproj
+*.sln
+*.slnx
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# ---------------------------------------------
+# OS
+# ---------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---------------------------------------------
+# Unity crash / build reports
+# ---------------------------------------------
+sysinfo.txt
+crashlytics-build.properties
+*.apk
+*.aab
+*.unitypackage
+*.app
+
+# ---------------------------------------------
+# ML-Agents training artefacts
+# PyTorch checkpoints are only needed to resume training, keep the repo light.
+# The exported .onnx policies and TensorBoard logs are kept on purpose.
+# ---------------------------------------------
+*.pt
+/results/**/*.pt
+
+# ---------------------------------------------
+# Local tooling / private notes
+# ---------------------------------------------
+CLAUDE.local.md
+.claude/
+.tmp_mcp/
