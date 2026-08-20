@@ -283,15 +283,6 @@ what the best possible behaviour is.
 
 ---
 
-## What I would do next
-
-- **Add obstacles and a moving goal.** The arena is empty right now, and the distance sensors are already in place for this.
-- **Start easy, get harder.** Begin with the goal very close, and push it further away as the car improves. This is called curriculum learning.
-- **Teach reversing and tight spaces.** The car almost never reverses today. A parking task would force it to.
-- **Count outcomes directly.** The score is a good summary, but plain counters for reached / crashed / timed out would make different training runs easier to compare.
-
----
-
 ## Words used in this README
 
 | Word                       | What it means here                                                                                      |
