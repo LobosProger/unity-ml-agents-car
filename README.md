@@ -17,15 +17,9 @@
 
 ## Demo
 
-<!--
-  DEMO VIDEO
-  Drag & drop the .mp4 straight into the GitHub README editor (or into any issue comment).
-  GitHub uploads it and inserts a https://github.com/user-attachments/assets/... link.
-  Replace the placeholder line below with that link, on its own line, and the player
-  will be embedded right here at the top of the page.
--->
+https://github.com/user-attachments/assets/ebc8025c-5141-4995-8eaf-c337b378eb02
 
-> **Demo video goes here.** The car drives to a green target. Every time it arrives, the target jumps to a new random spot and the car goes again.
+> **Demo video goes here.** The car drives to a target. Every time it arrives, the target jumps to a new random spot and the car goes again.
 
 ---
 
