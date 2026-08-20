@@ -17,15 +17,9 @@
 
 ## Demo
 
-<!--
-  DEMO VIDEO
-  Drag & drop the .mp4 straight into the GitHub README editor (or into any issue comment).
-  GitHub uploads it and inserts a https://github.com/user-attachments/assets/... link.
-  Replace the placeholder line below with that link, on its own line, and the player
-  will be embedded right here at the top of the page.
--->
+https://github.com/user-attachments/assets/ebc8025c-5141-4995-8eaf-c337b378eb02
 
-> **Demo video goes here.** The car drives to a green target. Every time it arrives, the target jumps to a new random spot and the car goes again.
+> **Demo video goes here.** The car drives to a target. Every time it arrives, the target jumps to a new random spot and the car goes again.
 
 ---
 
@@ -286,15 +280,6 @@ it is why the demo scene is one copy of the exact arena the car trained in.
 placed right next to the car. The car's centre of mass is lowered so it stops tipping over in hard turns. And the
 "getting closer" bonus is based on the *change* in distance each step, which speeds up learning without changing
 what the best possible behaviour is.
-
----
-
-## What I would do next
-
-- **Add obstacles and a moving goal.** The arena is empty right now, and the distance sensors are already in place for this.
-- **Start easy, get harder.** Begin with the goal very close, and push it further away as the car improves. This is called curriculum learning.
-- **Teach reversing and tight spaces.** The car almost never reverses today. A parking task would force it to.
-- **Count outcomes directly.** The score is a good summary, but plain counters for reached / crashed / timed out would make different training runs easier to compare.
 
 ---
 
